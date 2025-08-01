@@ -1,86 +1,66 @@
 # PowerShell ObDefuscator
 
-An AI-enhanced and local-first toolkit for obfuscating and deobfuscating PowerShell scripts. This tool is designed for penetration testers, red teamers, and blue teamers to aid in creating evasive scripts and analyzing suspicious ones.
-
-![Screenshot](https://user-images.githubusercontent.com/1259731/189495007-8575a7a7-33d3-463e-9f37-67253503a749.png)
+An advanced, AI-powered toolkit for obfuscating and deobfuscating PowerShell scripts. Designed for red teamers, blue teamers, and security researchers to aid in creating evasive payloads and analyzing malicious code.
 
 ## Features
+🚀 Dual Mode Operation: Choose between a fast, offline Local Mode for rule-based tasks or a powerful AI Mode for advanced, context-aware operations.
 
-- **Local-First Operation:** Works out-of-the-box in an offline "Local Mode" with a built-in JavaScript engine for fast, autonomous obfuscation and best-effort deobfuscation.
-- **Powerful AI Mode:** Can be upgraded to AI Mode using the [OpenRouter.ai](https://openrouter.ai) service, giving you access to dozens of state-of-the-art models (like GPT-4o, Claude 3, Gemini, Codestral) through a single API key.
-- **In-App Configuration:** No `.env` or config files needed. All settings are managed through a secure, in-app settings panel.
-- **Flexible API Key Handling:** Your API key is stored only for the session by default. You can optionally choose to persist the key in your browser's local storage for convenience.
-- **Flexible Obfuscator & Deobfuscator:** Features multiple complexity levels, granular technique control, and one-click reverse shell payload wrapping.
-- **Docker Support:** Ready to be built and deployed as a self-contained Docker container.
+🧠 Powerful AI Engine: AI Mode connects to the OpenRouter.ai service, giving you access to dozens of state-of-the-art models (like GPT-4o, Claude 3.5 Sonnet, Codestral, and Llama 3) through a single API key.
 
----
+🔒 Local-First & Offline Capable: The default Local Mode works entirely in your browser with no external network requests, ensuring speed and privacy.
 
-## How It Works
+🎛️ Granular Obfuscation Control: Fine-tune your payloads by selecting the obfuscation level (from Low to Insane) and specific techniques like lexical, encoding, semantic, and junk code injection.
 
-The tool operates in one of two modes, which you can set in the in-app settings panel.
+🔍 Detailed Analysis Reports: The deobfuscator provides a rich, structured report including a threat level assessment, a summary of the script's intent, a list of malicious indicators, and a step-by-step execution analysis.
 
-### Local Mode (Default)
-The application starts in this mode. It uses a built-in JavaScript engine to perform all tasks and does not make any external network requests.
-- **Pros:** Works completely offline, is extremely fast, and requires no configuration.
-- **Cons:** The obfuscation and deobfuscation are based on pre-defined rules. It is less "intelligent" than the AI and may not be able to analyze or create highly advanced, novel techniques.
-
-### AI Mode
-By providing an OpenRouter API key, you unlock AI Mode. All obfuscation and deobfuscation tasks are sent to the AI model you select.
-- **Pros:** Extremely powerful and context-aware. Can generate highly complex, layered obfuscation and provide deep, human-like analysis of unknown scripts using world-class models.
-- **Cons:** Requires an active internet connection and a valid OpenRouter API key.
-
----
-
-## Configuration
-
-Configuration is handled entirely within the application.
-
-1.  Click the **gear icon** (⚙️) in the top-right corner to open the Settings panel.
-2.  Enable the **AI Mode** switch.
-3.  Paste your **OpenRouter API Key** into the input field. You can get a key from [https://openrouter.ai](https://openrouter.ai).
-4.  Select your desired **AI Model** from the dropdown. The list includes many powerful code-focused models.
-5.  (Optional) Check the **"Persist API Key"** box if you want the key to be saved in your browser for future visits. Leave it unchecked to have the key automatically deleted when you close the browser tab.
-6.  Click **"Save Settings"**.
-
----
+🐳 Dockerized & Self-Contained: The entire application is packaged in a single Docker container for easy, one-command deployment.
 
 ## Getting Started
+This application is designed to be run with Docker.
 
-### Option 1: Running Locally (No Dependencies)
+### Prerequisites
+You must have Docker installed and running on your system.
 
-Because this project uses no build tools, you can run it directly. You may need to serve the files from a simple local web server to handle module imports correctly due to browser security policies (CORS).
+### Step 1: Clone the Repository
+```bash
+git clone https://github.com/Acorzo1983/PowerShell_ObDefuscator.git
+```
+```bash
+cd PowerShell_ObDefuscator
+```
 
-1.  Clone the repository.
-2.  A quick way to serve the files is with Python:
+### Step 2: Build the Docker Image
+From the root directory of the project, run the docker build command. This will create a self-contained image named powershell-obdefuscator.
+```bash
+sudo docker build -t powershell-obdefuscator .
+```
+### Step 3: Run the Docker Container
+Once the image is built, run it as a container. This command will start the application in the background and map it to your chosen port (e.g., 6969). For persistent use, run it like this:
+```bash
+sudo docker run -d -p 6969:80 --name ps-obdefuscator powershell-obdefuscator
+```
+Tip: For temporary test runs, you can add the --rm flag to automatically delete the container when it's stopped.
 
-    ```bash
-    # From the project's root directory:
-    python3 -m http.server
-    
-    # Then open http://localhost:8000 in your browser.
-    ```
+### Step 4: Access the Application
+The application is now running. To use it, open your web browser and navigate to:
 
-### Option 2: Running with Docker
+http://localhost:6969
 
-This is the recommended way to run the application.
+## Configuration (AI Mode)
+Click the gear icon (⚙️) in the top-right corner to open the Settings panel.
 
-1.  **Clone the repository.**
-2.  **Build the Docker image:**
+Switch the Mode to AI (Online).
 
-    ```bash
-    docker build -t powershell-obdefuscator .
-    ```
+Paste your OpenRouter API Key into the input field.
 
-3.  **Run the Docker container:**
+Click the "Test Key" button to validate your key.
 
-    ```bash
-    docker run -p 8080:80 -d --name ps-obdefuscator powershell-obdefuscator
-    ```
+Once the key is validated, select your desired AI models from the dropdown menus.
 
-4.  **Access the application** by navigating to `http://localhost:8080` in your web browser and configure it using the in-app settings panel.
+Click "Save Settings".
 
----
+## Credits
+Created with ❤️ by @I_Am_Jakoby & @yz9yt.
 
 ## Legal Disclaimer
-
-This tool is created for educational and learning purposes only. The creators take no responsibility for any malicious use of this tool or its output. Always ensure you have explicit, authorized permission before executing any scripts on a target system.
+This tool is created for educational, research, and authorized security testing purposes only. The creators take no responsibility for any malicious use of this tool or its output. Always ensure you have explicit, authorized permission before executing any scripts on a target system.
