@@ -1,5 +1,14 @@
 # PowerShell ObDefuscator
 
+[![Dockerized](https://img.shields.io/badge/Dockerized-✅-blue)](https://www.docker.com/)
+[![Made with PowerShell](https://img.shields.io/badge/Made%20with-PowerShell-012456?logo=powershell&logoColor=white)](https://docs.microsoft.com/en-us/powershell/)
+[![AI-Enabled](https://img.shields.io/badge/AI%20Mode-OpenRouter.ai-blueviolet?logo=openai)](https://openrouter.ai)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Issues](https://img.shields.io/github/issues/Acorzo1983/PowerShell_ObDefuscator)](https://github.com/Acorzo1983/PowerShell_ObDefuscator/issues)
+[![Stars](https://img.shields.io/github/stars/Acorzo1983/PowerShell_ObDefuscator?style=social)](https://github.com/Acorzo1983/PowerShell_ObDefuscator/stargazers)
+
+---
+
 An advanced, AI-powered toolkit for obfuscating and deobfuscating PowerShell scripts. Designed for red teamers, blue teamers, and security researchers to aid in creating evasive payloads and analyzing malicious code.
 
 ## Features
@@ -14,6 +23,8 @@ An advanced, AI-powered toolkit for obfuscating and deobfuscating PowerShell scr
 🔍 Detailed Analysis Reports: The deobfuscator provides a rich, structured report including a threat level assessment, a summary of the script's intent, a list of malicious indicators, and a step-by-step execution analysis.
 
 🐳 Dockerized & Self-Contained: The entire application is packaged in a single Docker container for easy, one-command deployment.
+
+---
 
 ## Getting Started
 This application is designed to be run with Docker.
@@ -46,6 +57,8 @@ The application is now running. To use it, open your web browser and navigate to
 
 http://localhost:6969
 
+---
+
 ## Configuration (AI Mode)
 Click the gear icon (⚙️) in the top-right corner to open the Settings panel.
 
@@ -59,8 +72,12 @@ Once the key is validated, select your desired AI models from the dropdown menus
 
 Click "Save Settings".
 
+---
+
 ## Credits
 Created with ❤️ by @I_Am_Jakoby & @yz9yt.
+
+---
 
 ## Legal Disclaimer
 This tool is created for educational, research, and authorized security testing purposes only. The creators take no responsibility for any malicious use of this tool or its output. Always ensure you have explicit, authorized permission before executing any scripts on a target system.
