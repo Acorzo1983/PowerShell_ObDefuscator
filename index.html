@@ -1,0 +1,44 @@
+<!-- version 0.1.6 Index -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ef4444'%3E%3Cpath fill-rule='evenodd' d='M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 9a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h.008a.75.75 0 00.75-.75V9zm-.008-2.25a.75.75 0 100-1.5.75.75 0 000 1.5z' clip-rule='evenodd' /%3E%3C/svg%3E" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PowerShell ObDefuscator</title>
+    
+    <script src="https://cdn.tailwindcss.com?play"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-bg': '#111827',
+              'brand-surface': '#1F2937',
+              'brand-border': '#374151',
+              'brand-primary': '#3B82F6',      // Blue for active states
+              'brand-secondary': '#EF4444',   // Red for accents and buttons
+              'brand-text': '#F9FAFB',
+              'brand-text-light': '#9CA3AF',
+            }
+          },
+        },
+      };
+    </script>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "react-dom/": "https://esm.sh/react-dom@^18.2.0/",
+          "react/": "https://esm.sh/react@^18.2.0/",
+          "react": "https://esm.sh/react@^18.2.0"
+        }
+      }
+    </script>
+  </head>
+  <body class="bg-brand-bg">
+    <div id="root"></div>
+    <script type="module" src="./index.tsx"></script>
+  </body>
+</html>
